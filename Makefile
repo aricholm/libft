@@ -6,7 +6,7 @@
 #    By: aricholm <aricholm@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/12 16:49:20 by aricholm          #+#    #+#              #
-#    Updated: 2022/04/21 13:58:48 by aricholm         ###   ########.fr        #
+#    Updated: 2022/04/21 14:00:10 by aricholm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,6 @@ all : $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $@ $^
-	rm -f $(OBJS) $(BONUS)
 
 $(OBJS): $(OBJ)/%.o: %.c
 	@mkdir -p $(@D)
