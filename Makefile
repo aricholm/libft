@@ -6,7 +6,7 @@
 #    By: aricholm <aricholm@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/12 16:49:20 by aricholm          #+#    #+#              #
-#    Updated: 2022/04/21 13:54:44 by aricholm         ###   ########.fr        #
+#    Updated: 2022/04/21 13:58:48 by aricholm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ CFLAGS = -Werror -Wall -Wextra
 NAME = libft.a
 HEAD = libft.h
 OBJ = obj
-SRC = src
 SRCS = \
 	ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
 	ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memset.c \
@@ -42,11 +41,11 @@ $(NAME): $(OBJS)
 	ar rc $@ $^
 	rm -f $(OBJS) $(BONUS)
 
-$(OBJS): $(OBJ)/%.o: $(SRC)/%.c
+$(OBJS): $(OBJ)/%.o: %.c
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-$(BOBJS): $(OBJ)/%.o: $(SRC)/%.c
+$(BOBJS): $(OBJ)/%.o: %.c
 	@mkdir -p $(@D)
 	$(CC) -c $(CFLAGS) -o $@ $<
 
